@@ -6,7 +6,7 @@ const FoodData = require("./FoodData.json");
 db.once("open", async () => {
   await Food.deleteMany({});
 
-  const foodItems = await Food.insertMany(techData);
+  const foodItems = await Food.insertMany(FoodData);
 
   console.log("Menu seeded!");
   process.exit(0);
