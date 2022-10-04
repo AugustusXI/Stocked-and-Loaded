@@ -1,35 +1,35 @@
 [
   {
-    "name": "JavaScript"
+    "name": "marinara"
   },
   {
-    "name": "HTML"
+    "name": "cheese"
   },
   {
-    "name": "CSS"
+    "name": "pepperoni"
   },
   {
-    "name": "Node.js"
+    "name": "olives"
   },
   {
-    "name": "Express.js"
+    "name": "onions"
   },
   {
-    "name": "MySQL"
+    "name": "red peppers"
   },
   {
-    "name": "MongoDB"
+    "name": "green peppers"
   },
   {
-    "name": "React"
+    "name": "sausage"
   },
   {
-    "name": "GraphQL"
+    "name": "mushrooms"
   },
   {
-    "name": "Sequelize"
+    "name": "canadian bacon"
   },
   {
-    "name": "Handlebars.js"
+    "name": "pineapple"
   }
 ]

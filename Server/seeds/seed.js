@@ -1,13 +1,13 @@
-const db = require('../config/connection');
-const { Tech } = require('../models');
+const db = require("../config/connection");
+const { Food } = require("../models");
 
-const techData = require('./techData.json');
+const FoodData = require("./FoodData.json");
 
-db.once('open', async () => {
-  await Tech.deleteMany({});
+db.once("open", async () => {
+  await Food.deleteMany({});
 
-  const technologies = await Tech.insertMany(techData);
+  const foodItems = await Food.insertMany(techData);
 
-  console.log('Technologies seeded!');
+  console.log("Menu seeded!");
   process.exit(0);
 });
