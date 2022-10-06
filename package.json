@@ -2,10 +2,12 @@
   "name": "stocked-and-loaded",
   "version": "1.0.0",
   "description": "An application to help restaurants manage inventory",
-  "main": "index.js",
+  "main": "server/serverjs",
   "scripts": {
-    "watch": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "cd server && node server.js",
+    "server": "cd server node server.js --ignore client",
+    "install": "cd server && npm i && cd ../client && npm i",
+    "client": "cd client && npm start"
   },
   "repository": {
     "type": "git",
