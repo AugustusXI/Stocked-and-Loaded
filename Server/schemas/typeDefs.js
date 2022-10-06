@@ -1,6 +1,9 @@
 const { gql } = require("apollo-server-express");
-
+// added query root def
 const typeDefs = gql`
+  type Query {
+    query: String
+  }
   type Food {
     _id: ID!
     name: String!
