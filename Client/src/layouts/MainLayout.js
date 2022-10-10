@@ -1,7 +1,7 @@
 import React from "react";
 import ButtonAppBar from "../components/ButtonAppBar";
 import Footer from "../components/Footer";
-import Home from "../pages/Home";
+import Home from "../pages/home";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 const MainLayout = () => {
   return (
