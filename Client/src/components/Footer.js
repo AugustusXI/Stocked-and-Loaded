@@ -1,10 +1,10 @@
-import React from 'react';
-import Container from '@mui/material/Container';
+import React from "react";
+import Container from "@mui/material/Container";
 const Footer = () => {
-    return (
-        <Container>
+  return (
+    <Container>
       <div>footer test</div>
-      </Container>
-    )
-}
+    </Container>
+  );
+};
 export default Footer;
