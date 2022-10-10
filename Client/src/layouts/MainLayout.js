@@ -7,9 +7,10 @@ const MainLayout = () => {
     return( <Router>
         <ButtonAppBar />
         <Routes>
-          <Route path="/" element={<Home/>}>
-          <Route/>
-          <Route/>
+          <Route path="/" element={<Home/>}/>
+          <Route path="/" element={<onOrder/>}/>
+          <Route path "/" element={<outOfStock/>}/>
+          <Route path "/" element={<toOrder/>}/>
         </Routes>
         <Footer />
       <Router/>)
