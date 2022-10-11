@@ -25,22 +25,34 @@ export default function ButtonAppBar() {
             <MenuIcon />
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            Stocked and Loaded
           </Typography>
 
-          <Button color="inherit">Login</Button>
 
           <Button color="inherit">
-            <Link to="/Home">Home</Link>
+            <Link to="/login" style={{ textDecoration: "none", color: 'white' }}>
+              Login
+            </Link>
           </Button>
           <Button color="inherit">
-            <Link to="/OnOrder">On Order</Link>
+            <Link to="/" style={{ textDecoration: "none", color: 'white' }}>
+              Home
+            </Link>
           </Button>
           <Button color="inherit">
-            <Link to="/ToOrder">To Be Ordered</Link>
+            <Link to="/onorder" style={{ textDecoration: "none", color: 'white' }}>
+              On Order
+            </Link>
           </Button>
           <Button color="inherit">
-            <Link to="/OutOfStock">86 List</Link>
+            <Link to="/toorder" style={{ textDecoration: "none", color: 'white' }}>
+              To Be Ordered
+            </Link>
+          </Button>
+          <Button color="inherit">
+            <Link to="/outofstock" style={{ textDecoration: "none", color: 'white' }}>
+              86 List
+            </Link>
           </Button>
         </Toolbar>
       </AppBar>
