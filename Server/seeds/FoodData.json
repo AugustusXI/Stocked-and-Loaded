@@ -1,12 +1,15 @@
 [
   {
-    "name": "marinara"
+    "name": "marinara",
+    "inStock": true
   },
   {
-    "name": "cheese"
+    "name": "cheese",
+    "inStock": true
   },
   {
-    "name": "pepperoni"
+    "name": "pepperoni",
+    "inStock": true
   },
   {
     "name": "olives"
