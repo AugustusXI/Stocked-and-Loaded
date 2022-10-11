@@ -2,10 +2,14 @@
   "name": "stocked-and-loaded",
   "version": "1.0.0",
   "description": "An application to help restaurants manage inventory",
-  "main": "index.js",
+  "main": "server/serverjs",
   "scripts": {
-    "watch": "node server.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:dev": "concurrently \"cd server && npm run server\" \"cd client && npm run start\"",
+    "start": "npm run build && cd server && node server.js",
+    "server": "cd server nodemon server.js --ignore client",
+    "build": "cd client && npm run build",
+    "install": "cd client && npm install",
+    "client": "cd client && npm start"
   },
   "repository": {
     "type": "git",
@@ -16,13 +20,13 @@
   "bugs": {
     "url": "https://github.com/AugustusXI/Stocked-and-Loaded/issues"
   },
-  "devDependencies": {
-    "nodemon": "^2.0.3"
-  },
   "homepage": "https://github.com/AugustusXI/Stocked-and-Loaded#readme",
+  "devDependencies": {
+    "concurrently": "^7.4.0"
+  },
   "dependencies": {
-    "express": "^4.18.1",
-    "mongoose": "^6.6.4",
-    "nodemon": "^2.0.20"
+    "@apollo/client": "^3.7.0",
+    "jwt-decode": "^3.1.2",
+    "react-router-dom": "^6.4.2"
   }
 }

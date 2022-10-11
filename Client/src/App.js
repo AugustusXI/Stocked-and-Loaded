@@ -1,24 +1,44 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from "./pages/Home";
+import OnOrder from "./pages/OnOrder";
+import OutOfStock from "./pages/OutOfStock";
+import ToOrder from "./pages/ToOrder";
+import Footer from "./components/Footer";
+import ButtonAppBar from "./components/ButtonAppBar";
+import { setContext } from "@apollo/client/link/context";
+import { ApolloClient, InMemoryCache, ApolloProvider } from "@apollo/client";
 
+const authLink = setContext((_, { headers }) => {
+  const token = localStorage.getItem("id_token");
+  return {
+    headers: {
+      ...headers,
+      authorization: token ? `Bearer ${token}` : "",
+    },
+  };
+});
+
+const client = new ApolloClient({
+  link: authLink,
+  cache: new InMemoryCache(),
+});
+// ----------------------------------------------
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client}>
+      <Router>
+        <>
+          <ButtonAppBar />
+          <Routes>
+            <Route path="/" element={<Home />} />
+            {/* <Route path="/" element={<onOrder />} /> */}
+            {/* <Route path="/" element={<outOfStock />} /> */}
+            {/* <Route path="/" element={<toOrder />} /> */}
+          </Routes>
+          <Footer />
+        </>
+      </Router>
+    </ApolloProvider>
   );
 }
 
