@@ -11,12 +11,14 @@ const FoodSchema = new Schema({
   onOrder: {
     type: Boolean,
   },
-  toOrder: {
-    type: Boolean,
-  },
-  outOfStock: {
-    type: Boolean,
-  },
+  // dont think we need this
+  // toOrder: {
+  //   type: Boolean,
+  // },
+  // or this
+  // outOfStock: {
+  //   type: Boolean,
+  // },
 });
 
 const Food = model("Food", FoodSchema);
