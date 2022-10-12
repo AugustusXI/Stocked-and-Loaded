@@ -13,6 +13,7 @@ import {
   ApolloProvider,
   createHttpLink,
 } from "@apollo/client";
+import LogIn from "./pages/Login";
 
 const httpLink = createHttpLink({
   uri: "/graphql",
@@ -49,6 +50,7 @@ function App() {
             <Route path="/on-order" element={<OnOrder />} />
             <Route path="/out-of-stock" element={<OutOfStock />} />
             <Route path="/to-order" element={<ToOrder />} />
+            <Route path="/login" element={<LogIn />} />
           </Routes>
           <Footer />
         </>
