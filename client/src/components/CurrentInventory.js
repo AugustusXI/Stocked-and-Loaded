@@ -1,6 +1,17 @@
 import React from "react";
+import { IN_STOCK } from "../utils/queries";
+import { useQuery } from "@apollo/client";
+import { useParams } from "react-router-dom";
 
-const CurrentInventory = ({ inventory = [] }) => {
+const CurrentInventory = () => {
+  const { foodId } = useParams();
+
+  const { loading, data } = useQuery(IN_STOCK, {
+    variables: { foodId: foodId },
+  });
+  console.log(data?.foods);
+  const inventory = data?.inStock;
+  console.log(inventory);
   if (!inventory.length) {
     return <h3>We're Completely Out of Stock</h3>;
   }

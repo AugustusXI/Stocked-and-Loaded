@@ -4,7 +4,7 @@ export const QUERY_USER = gql`
     user(username: $username) {
       _id
       username
-      email
+      role
     }
   }
 `;
@@ -13,6 +13,16 @@ export const IN_STOCK = gql`
     inStock {
       name
       inStock
+    }
+  }
+`;
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      role
+      }
     }
   }
 `;
