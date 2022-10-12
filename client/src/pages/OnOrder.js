@@ -1,60 +1,34 @@
-import React from 'react';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import Checkbox from '@mui/material/Checkbox';
-import IconButton from '@mui/material/IconButton';
-import CommentIcon from '@mui/icons-material/Comment';
+import React from "react";
+import { ON_ORDER } from "../utils/queries";
+import { useQuery } from "@apollo/client";
 
-export default function CheckboxList() {
-  const [checked, setChecked] = React.useState([0]);
-
-  const handleToggle = (value) => () => {
-    const currentIndex = checked.indexOf(value);
-    const newChecked = [...checked];
-
-    if (currentIndex === -1) {
-      newChecked.push(value);
-    } else {
-      newChecked.splice(currentIndex, 1);
-    }
-
-    setChecked(newChecked);
-  };
+const OnOrder = () => {
+  const { loading, data } = useQuery(ON_ORDER);
+  const inventory = data?.onOrder;
+  if (!data?.onOrder.length) {
+    return <h3>Nothing's on order</h3>;
+  }
 
   return (
-    <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
-      {[0, 1, 2, 3].map((value) => {
-        const labelId = `checkbox-list-label-${value}`;
-
-        return (
-          <ListItem
-            key={value}
-            secondaryAction={
-              <IconButton edge="end" aria-label="comments">
-                <CommentIcon />
-              </IconButton>
-            }
-            disablePadding
-          >
-            <ListItemButton role={undefined} onClick={handleToggle(value)} dense>
-              <ListItemIcon>
-                <Checkbox
-                  edge="start"
-                  checked={checked.indexOf(value) !== -1}
-                  tabIndex={-1}
-                  disableRipple
-                  inputProps={{ 'aria-labelledby': labelId }}
-                />
-              </ListItemIcon>
-              <ListItemText id={labelId} primary={`Line item ${value + 1}`} />
-            </ListItemButton>
-          </ListItem>
-        );
-      })}
-    </List>
+    <>
+      <h3
+        className="p-5 display-inline-block"
+        style={{ borderBottom: "1px dotted #1a1a1a" }}
+      >
+        On Order
+      </h3>
+      <div className="flex-row my-4">
+        {inventory &&
+          inventory.map((food) => (
+            <div key={food._id} className="col-12 mb-3 pb-3">
+              <div className="p-3 bg-dark text-light">
+                <h5 className="card-header">{food.name}</h5>
+              </div>
+            </div>
+          ))}
+      </div>
+    </>
   );
-}
+};
 
+export default OnOrder;

@@ -1,7 +1,6 @@
 import React from "react";
-import { useQuery } from "@apollo/client";
-import { IN_STOCK } from "../utils/queries";
 import CurrentInventory from "../components/CurrentInventory";
+
 const Home = () => {
   return (
     <main>

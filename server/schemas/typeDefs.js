@@ -14,8 +14,6 @@ const typeDefs = gql`
     name: String!
     inStock: Boolean
     onOrder: Boolean
-    toOrder: Boolean
-    outOfStock: Boolean
   }
 
   type User {
