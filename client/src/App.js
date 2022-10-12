@@ -31,9 +31,9 @@ function App() {
           <ButtonAppBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/" element={<onOrder />} /> */}
-            {/* <Route path="/" element={<outOfStock />} /> */}
-            {/* <Route path="/" element={<toOrder />} /> */}
+            <Route path="/on-order" element={<OnOrder />} />
+            <Route path="/out-of-stock" element={<OutOfStock />} />
+            <Route path="/to-order" element={<ToOrder />} />
           </Routes>
           <Footer />
         </>
