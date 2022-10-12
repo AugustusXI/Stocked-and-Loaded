@@ -1,7 +1,7 @@
 const { Schema, model } = require("mongoose");
 
 // requires each user to have username email and password as well as assigned role
-const UserSchema = new Schema({
+const userSchema = new Schema({
   username: {
     type: String,
     required: true,
