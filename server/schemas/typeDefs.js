@@ -5,6 +5,8 @@ const typeDefs = gql`
     allFood: [Food]
     inStock: [Food]
     outOfStock: [Food]
+    onOrder: [Food]
+    toOrder: [Food]
     me: User
   }
   type Food {

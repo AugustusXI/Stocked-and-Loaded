@@ -22,7 +22,6 @@ export const QUERY_ME = gql`
       _id
       username
       role
-      }
     }
   }
 `;

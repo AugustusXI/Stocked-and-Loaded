@@ -4,15 +4,9 @@ import { useQuery } from "@apollo/client";
 import { useParams } from "react-router-dom";
 
 const CurrentInventory = () => {
-  const { foodId } = useParams();
-
-  const { loading, data } = useQuery(IN_STOCK, {
-    variables: { foodId: foodId },
-  });
-  console.log(data?.foods);
+  const { loading, data } = useQuery(IN_STOCK);
   const inventory = data?.inStock;
-  console.log(inventory);
-  if (!inventory.length) {
+  if (!data?.inStock.length) {
     return <h3>We're Completely Out of Stock</h3>;
   }
 
@@ -29,12 +23,7 @@ const CurrentInventory = () => {
           inventory.map((food) => (
             <div key={food._id} className="col-12 mb-3 pb-3">
               <div className="p-3 bg-dark text-light">
-                <h5 className="card-header">
-                  {food.name}
-                  <span style={{ fontSize: "0.825rem" }}>
-                    on {food.inStock}
-                  </span>
-                </h5>
+                <h5 className="card-header">{food.name}</h5>
               </div>
             </div>
           ))}
