@@ -28,29 +28,40 @@ export default function ButtonAppBar() {
             Stocked and Loaded
           </Typography>
 
-
           <Button color="inherit">
-            <Link to="/login" style={{ textDecoration: "none", color: 'white' }}>
+            <Link
+              to="/login"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               Login
             </Link>
           </Button>
           <Button color="inherit">
-            <Link to="/" style={{ textDecoration: "none", color: 'white' }}>
+            <Link to="/" style={{ textDecoration: "none", color: "white" }}>
               Home
             </Link>
           </Button>
           <Button color="inherit">
-            <Link to="/on-order" style={{ textDecoration: "none", color: 'white' }}>
+            <Link
+              to="/on-order"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               On Order
             </Link>
           </Button>
           <Button color="inherit">
-            <Link to="/to-order" style={{ textDecoration: "none", color: 'white' }}>
+            <Link
+              to="/to-order"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               To Be Ordered
             </Link>
           </Button>
           <Button color="inherit">
-            <Link to="/out-of-stock" style={{ textDecoration: "none", color: 'white' }}>
+            <Link
+              to="/out-of-stock"
+              style={{ textDecoration: "none", color: "white" }}
+            >
               86 List
             </Link>
           </Button>
