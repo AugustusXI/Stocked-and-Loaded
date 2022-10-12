@@ -28,7 +28,11 @@ export default function ButtonAppBar() {
             Stocked and Loaded
           </Typography>
 
-
+          <Button color="inherit">
+            <Link to="/sign-up" style={{ textDecoration: "none", color: 'white' }}>
+              SignUp
+            </Link>
+          </Button>
           <Button color="inherit">
             <Link to="/login" style={{ textDecoration: "none", color: 'white' }}>
               Login
