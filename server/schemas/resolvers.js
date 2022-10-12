@@ -26,6 +26,7 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
   },
+
   Mutation: {
     update: async (parent, { name }) => {
       const food = await Food.findOne({ name });
@@ -49,7 +50,9 @@ const resolvers = {
         { $set: { inStock: inStock, onOrder: onOrder } },
         { new: true }
       );
+
     },
   },
 };
+
 module.exports = resolvers;

@@ -1,4 +1,6 @@
 import React from "react";
+import { OUT_OF_STOCK } from "../utils/queries";
+import { useQuery } from "@apollo/client";
 
 const OutOfStock = () => {
   const { loading, data } = useQuery(OUT_OF_STOCK);
@@ -23,6 +25,7 @@ const OutOfStock = () => {
                 <h5 className="card-header">{food.name}</h5>
               </div>
               <button>Update</button>
+
             </div>
           ))}
       </div>
@@ -30,4 +33,4 @@ const OutOfStock = () => {
   );
 };
 
-export default outOfStock;
+export default OutOfStock;

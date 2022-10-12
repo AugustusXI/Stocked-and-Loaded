@@ -4,6 +4,7 @@ import OnOrder from "./pages/OnOrder";
 import OutOfStock from "./pages/OutOfStock";
 import ToOrder from "./pages/ToOrder";
 import Footer from "./components/Footer";
+import SignUpPage from "./pages/SignUpPage";
 import ButtonAppBar from "./components/ButtonAppBar";
 import { setContext } from "@apollo/client/link/context";
 import {
@@ -44,9 +45,10 @@ function App() {
           <ButtonAppBar />
           <Routes>
             <Route path="/" element={<Home />} />
-            {/* <Route path="/" element={<onOrder />} /> */}
-            {/* <Route path="/" element={<outOfStock />} /> */}
-            {/* <Route path="/" element={<toOrder />} /> */}
+            <Route path="/sign-up" element={<SignUpPage />} />
+            <Route path="/on-order" element={<OnOrder />} />
+            <Route path="/out-of-stock" element={<OutOfStock />} />
+            <Route path="/to-order" element={<ToOrder />} />
           </Routes>
           <Footer />
         </>

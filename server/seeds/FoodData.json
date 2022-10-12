@@ -1,38 +1,57 @@
 [
   {
     "name": "marinara",
-    "inStock": true
+    "inStock": false,
+    "onOrder": true
   },
   {
     "name": "cheese",
-    "inStock": true
+    "inStock": false,
+    "onOrder": false
   },
   {
     "name": "pepperoni",
-    "inStock": true
+    "inStock": false,
+    "onOrder": false
   },
   {
-    "name": "olives"
+    "name": "olives",
+    "inStock": false,
+    "onOrder": true
   },
   {
-    "name": "onions"
+    "name": "onions",
+    "inStock": false,
+    "onOrder": false
   },
   {
-    "name": "red peppers"
+    "name": "red peppers",
+    "inStock": false,
+    "onOrder": false
   },
   {
-    "name": "green peppers"
+    "name": "green peppers",
+    "inStock": true,
+    "onOrder": true
   },
   {
-    "name": "sausage"
+    "name": "sausage",
+    "inStock": true,
+    "onOrder": true
   },
   {
-    "name": "mushrooms"
+    "name": "mushrooms",
+    "inStock": true,
+    "onOrder": true
   },
   {
-    "name": "canadian bacon"
+    "name": "canadian bacon",
+    "inStock": true,
+    "onOrder": true
   },
   {
-    "name": "pineapple"
+    "name": "pineapple",
+    "inStock": false,
+    "onOrder": false
   }
 ]
