@@ -26,5 +26,30 @@ const resolvers = {
       throw new AuthenticationError("You need to be logged in!");
     },
   },
+  Mutation: {
+    update: async (parent, { name }) => {
+      const food = await Food.findOne({ name });
+      let inStock = true;
+      let onOrder = true;
+      if (!food) {
+        console.error("Could not find food");
+      }
+      if (food.inStock) {
+        inStock = false;
+        onOrder = false;
+      } else if (!food.onOrder) {
+        inStock = false;
+        onOrder = true;
+      } else if (food.onOrder) {
+        inStock = true;
+        onOrder = false;
+      }
+      return await Food.findOneAndUpdate(
+        { name: name },
+        { $set: { inStock: inStock, onOrder: onOrder } },
+        { new: true }
+      );
+    },
+  },
 };
 module.exports = resolvers;

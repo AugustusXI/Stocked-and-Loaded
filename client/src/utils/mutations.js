@@ -23,6 +23,14 @@ export const ADD_USER = gql`
     }
   }
 `;
-export const ADD_IN_STOCK = gql`
-mutation addInStock($)
+export const UPDATE = gql`
+  mutation update($name: String!, $inStock: Boolean!, $onOrder: Boolean!) {
+    update(name: $name, inStock: $inStock, onOrder: $onOrder) {
+      Food {
+        name
+        inStock
+        onOrder
+      }
+    }
+  }
 `;
