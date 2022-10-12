@@ -16,6 +16,11 @@ const typeDefs = gql`
     name: String!
     inStock: Boolean
     onOrder: Boolean
+
+  }
+  type Mutation {
+    update(name: String!): Food
+
   }
 
   type User {
