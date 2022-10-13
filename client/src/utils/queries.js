@@ -5,6 +5,7 @@ export const QUERY_USER = gql`
       _id
       username
       email
+      role
     }
   }
 `;
@@ -13,6 +14,39 @@ export const IN_STOCK = gql`
     inStock {
       name
       inStock
+    }
+  }
+`;
+export const OUT_OF_STOCK = gql`
+  query Query {
+    outOfStock {
+      name
+      inStock
+    }
+  }
+`;
+export const ON_ORDER = gql`
+  query Query {
+    onOrder {
+      name
+      onOrder
+    }
+  }
+`;
+export const TO_ORDER = gql`
+  query Query {
+    toOrder {
+      name
+      onOrder
+    }
+  }
+`;
+export const QUERY_ME = gql`
+  query me {
+    me {
+      _id
+      username
+      role
     }
   }
 `;

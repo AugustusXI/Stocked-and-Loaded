@@ -1,7 +1,7 @@
 import React from "react";
-import CurrentInventory from "../components/CurrentInventory";
+import SignUp from "../components/SignUp";
 
-const Home = () => {
+const SignUpPage = () => {
   return (
     <main>
       <div className="flex-row justify-center">
@@ -9,11 +9,11 @@ const Home = () => {
           className="col-12 col-md-10 mb-3 p-3"
           style={{ border: "1px dotted #1a1a1a" }}
         >
-          <CurrentInventory />
+          <SignUp />
         </div>
       </div>
     </main>
   );
 };
 
-export default Home;
+export default SignUpPage;

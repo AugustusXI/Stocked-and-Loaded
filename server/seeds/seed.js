@@ -1,7 +1,8 @@
 const db = require("../config/connection");
-const { Food } = require("../models");
+const { Food, User } = require("../models");
 
 const FoodData = require("./FoodData.json");
+// const userSeeds = require("./userSeeds.json");
 
 db.once("open", async () => {
   await Food.deleteMany({});
@@ -10,4 +11,11 @@ db.once("open", async () => {
 
   console.log("Menu seeded!");
   process.exit(0);
+
+  // await User.deleteMany({});
+
+  // await User.create(userSeeds);
+
+  // console.log("users seeded");
+  // process.exit(0);
 });

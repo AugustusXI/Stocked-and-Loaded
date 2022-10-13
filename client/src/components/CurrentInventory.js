@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import { ON_ORDER } from "../utils/queries";
+import { IN_STOCK } from "../utils/queries";
 import { useQuery, useMutation } from "@apollo/client";
 import { UPDATE } from "../utils/mutations";
 
-const OnOrder = () => {
-  const { loading, data } = useQuery(ON_ORDER);
-  const inventory = data?.onOrder;
+const CurrentInventory = () => {
+  const { loading, data } = useQuery(IN_STOCK);
+  const inventory = data?.inStock;
   const [food, setFood] = useState();
 
   const [updateFood, { error }] = useMutation(UPDATE);
@@ -25,8 +25,8 @@ const OnOrder = () => {
       window.location.reload();
     }
   }, [food]);
-  if (!data?.onOrder.length) {
-    return <h3>Nothing's on order</h3>;
+  if (!data?.inStock.length) {
+    return <h3>We're Completely Out of Stock</h3>;
   }
 
   return (
@@ -35,7 +35,7 @@ const OnOrder = () => {
         className="p-5 display-inline-block"
         style={{ borderBottom: "1px dotted #1a1a1a" }}
       >
-        On Order
+        Current Inventory
       </h3>
       <div className="flex-row my-4">
         {inventory &&
@@ -54,4 +54,4 @@ const OnOrder = () => {
   );
 };
 
-export default OnOrder;
+export default CurrentInventory;

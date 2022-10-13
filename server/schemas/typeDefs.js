@@ -5,22 +5,38 @@ const typeDefs = gql`
     allFood: [Food]
     inStock: [Food]
     outOfStock: [Food]
+    onOrder: [Food]
+    toOrder: [Food]
     me: User
+    users: [User]
+    user(username: String!): User
   }
   type Food {
     _id: ID!
     name: String!
     inStock: Boolean
     onOrder: Boolean
-    toOrder: Boolean
-    outOfStock: Boolean
+  }
+  type Mutation {
+    update(name: String!): Food
   }
 
   type User {
     _id: ID
     username: String
     email: String
+    password: String
     role: String
+  }
+
+  type Auth {
+    token: ID!
+    user: User
+  }
+
+  type Mutation {
+    addUser(username: String!, email: String!, password: String!): Auth
+    login(email: String!, password: String!): Auth
   }
 `;
 
