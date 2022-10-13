@@ -9,13 +9,13 @@
 
 ## Purpose
 
-The purpose of this app is to allow employees at a restarting to streamline inventory and ordering to minimize waste.
+The purpose of this app is to allow employees at a restaurant to streamline inventory and ordering to minimize waste.
 
 ## Github Page
 * https://github.com/AugustusXI/Stocked-and-Loaded
 
 ## Technology Used
-* html
+* Html
 * Css
 * Javascript
 * React
