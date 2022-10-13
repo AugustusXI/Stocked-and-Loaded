@@ -1,5 +1,5 @@
 const { Schema, model } = require("mongoose");
-
+const bcrypt = require("bcrypt");
 // requires each user to have username email and password as well as assigned role
 const userSchema = new Schema({
   username: {
@@ -14,10 +14,6 @@ const userSchema = new Schema({
     match: [/.+@.+\..+/, "Must use a valid email address"],
   },
   password: {
-    type: String,
-    required: true,
-  },
-  role: {
     type: String,
     required: true,
   },
@@ -36,6 +32,6 @@ userSchema.methods.isCorrectPassword = async function (password) {
   return bcrypt.compare(password, this.password);
 };
 
-const User = model("User", UserSchema);
+const User = model("user", userSchema);
 
 module.exports = User;

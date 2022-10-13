@@ -1,5 +1,5 @@
 const { User, Food } = require("../models");
-
+const { signToken } = require("../utils/auth");
 const resolvers = {
   Query: {
     inStock: async () => {
@@ -28,6 +28,12 @@ const resolvers = {
   },
 
   Mutation: {
+    addUser: async (parent, args) => {
+      const user = await User.create(args);
+      const token = signToken(user);
+
+      return { token, user };
+    },
     update: async (parent, { name }) => {
       const food = await Food.findOne({ name });
       let inStock = true;
@@ -50,7 +56,6 @@ const resolvers = {
         { $set: { inStock: inStock, onOrder: onOrder } },
         { new: true }
       );
-
     },
   },
 };

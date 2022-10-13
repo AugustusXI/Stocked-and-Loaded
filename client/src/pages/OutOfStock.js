@@ -24,8 +24,6 @@ const OutOfStock = () => {
               <div className="p-3 bg-dark text-light">
                 <h5 className="card-header">{food.name}</h5>
               </div>
-              <button>Update</button>
-
             </div>
           ))}
       </div>
