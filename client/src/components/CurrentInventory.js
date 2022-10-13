@@ -1,25 +1,30 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { IN_STOCK } from "../utils/queries";
 import { useQuery, useMutation } from "@apollo/client";
-// import { UPDATE } from "../utils/mutations";
-
+import { UPDATE } from "../utils/mutations";
 
 const CurrentInventory = () => {
   const { loading, data } = useQuery(IN_STOCK);
   const inventory = data?.inStock;
-  // const [updateFood, { error }] = useMutation(UPDATE);
-  // const updateHandler = async () => {
-  // await updateFood(
-  //   {
-  //     variables: {
-  //       inStock,
-  //       onOrder,
-  //     },
-  //   },
-  //   []
-  // );
-  // };
+  const [food, setFood] = useState();
 
+  const [updateFood, { error }] = useMutation(UPDATE);
+  const updateHandler = async () => {
+    await updateFood(
+      {
+        variables: {
+          name: food,
+        },
+      },
+      []
+    );
+  };
+  useEffect(() => {
+    if (food) {
+      updateHandler();
+      window.location.reload();
+    }
+  }, [food]);
   if (!data?.inStock.length) {
     return <h3>We're Completely Out of Stock</h3>;
   }
@@ -34,13 +39,13 @@ const CurrentInventory = () => {
       </h3>
       <div className="flex-row my-4">
         {inventory &&
-          inventory.map((food) => (
-            <div key={food._id} className="col-12 mb-3 pb-3">
+          inventory.map((item) => (
+            <div key={item._id} className="col-12 mb-3 pb-3">
               <div className="p-3 bg-dark text-light">
-                <h5 className="card-header">{food.name}</h5>
-                {/* <button onclick={updateFood(food.name)} id="update">
+                <h5 className="card-header">{item.name}</h5>
+                <button onClick={() => setFood(item.name)} id="update">
                   Update
-                </button> */}
+                </button>
               </div>
             </div>
           ))}
