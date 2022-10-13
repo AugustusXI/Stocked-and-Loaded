@@ -78,7 +78,7 @@ function SignupForm(props) {
       [name]: value,
     });
   };
-  console.log(formState);
+
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
